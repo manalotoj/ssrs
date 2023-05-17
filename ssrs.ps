@@ -1,0 +1,16 @@
+$url = "https://github.com/manalotoj/ssrs/raw/main/SQLSysClrTypes2014.msi"
+$outputPath = "C:\users\vmuser\SQLSysClrTypes.msi"
+Invoke-WebRequest -Uri $url -OutFile $outputPath
+
+$url = "https://github.com/manalotoj/ssrs/raw/main/ReportViewer.msi"
+$outputPath = "C:\users\vmuser\ReportViewer.msi"
+Invoke-WebRequest -Uri $url -OutFile $outputPath
+
+$msiPath = "C:\Users\vmuser\SQLSysClrTypes.msi"
+$arguments = "/i `"$msiPath`" /quiet /qn /norestart -L*v sqlsysclrtypes.log"
+Start-Process -FilePath "msiexec.exe" -ArgumentList $arguments -Wait
+
+
+$msiPath = "C:\Users\vmuser\ReportViewer.msi"
+$arguments = "/i `"$msiPath`" /quiet /qn /norestart -L*v reportviewer.log"
+Start-Process -FilePath "msiexec.exe" -ArgumentList $arguments -Wait
