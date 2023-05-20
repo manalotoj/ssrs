@@ -15,7 +15,7 @@ else {
 # download install file
 $filePath = "$folderPath\File.zip"
 $url = "https://github.com/manalotoj/ssrs/raw/main/deploy.zip"
-Invoke-WebRequest -Uri $url -outFile $filePath
+Invoke-WebRequest -Uri $url -outFile $filePath -useBasicParsing
 
 # unblock and unzip install file
 $destinationPath = "C:\inetpub\wwwroot"
