@@ -1,5 +1,5 @@
 #
-# powershell script to deploy zip file to inetpub root directory
+# powershell script to deploy zip file to inetpub root directory;
 #
 
 # create install folder if it does not already exist
